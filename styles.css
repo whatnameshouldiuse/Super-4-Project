@@ -1,0 +1,40 @@
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background-color: #0f2ba7;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+main {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgb(183, 174, 174);
+}
+
+
+label {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: 15px 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+select, button {
+    display: block;
+    margin: 0 auto;
+    padding: 3px;
+}
