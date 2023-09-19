@@ -779,12 +779,62 @@ for (const project of projectOptions) {
     dyiDropdown.appendChild(option);
 }
 
-// GET https://youtube.googleapis.com/youtube/v3/playlists?key=[YOUR_API_KEY] HTTP/1.1
 
-fetch("https://youtube.googleapis.com/youtube/v3/playlistItems?key=AIzaSyBniUrdA_ATDmJ6H5XjB3ByFZKSnmMqp38&playlistId=PLvahqwMqN4M2euuB96bo7rnVMcakCkIRZ")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data){
-        console.log(data)
-    })
+//Trying this from another project
+
+
+//Listener for the submit button
+$('#submit-button').click(function() {
+    const selectedYear = $('#year').val();
+    const selectedMake = $('#make').val();
+    const selectedModel = $('#model').val();
+    const selectedProject = $('#DYI').val();  // Changed from DIY to DYI
+
+    if (selectedYear && selectedMake && selectedModel && selectedProject) {
+        // Redirect to the results page
+        window.location.href = `results.html?year=${selectedYear}&make=${selectedMake}&model=${selectedModel}&project=${selectedProject}`;
+    } else {
+        alert('Please select all fields');
+    }
+});
+
+// Search YouTube
+function searchYouTube(year, make, model, project) {
+    const apiKey = 'AIzaSyBniUrdA_ATDmJ6H5XjB3ByFZKSnmMqp38'; //Youtube Key goes here
+    const query = `${year} ${make} ${model} ${project} DIY`;
+    const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?`; //Need Youtube site here
+
+    $.get(url, function(data) {
+       
+    });
+}
+
+// Function to search eBay
+function searchEbay(year, make, model, project) {
+    const appId = ''; //eBay Key goes here
+    const query = `${year} ${make} ${model} ${project}`;
+    const url = ``; //Need eBay's site here
+
+    $.get(url, function(data) {
+
+    });
+}
+
+$(document).ready(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const year = urlParams.get('year');
+    const make = urlParams.get('make');
+    const model = urlParams.get('model');
+    const project = urlParams.get('project');
+
+    if (year && make && model && project) {
+        // Search YouTube
+        searchYouTube(year, make, model, project);
+
+        // Search eBay
+        searchEbay(year, make, model, project);
+    } else {
+        alert('Missing search parameters');
+    }
+});
+
