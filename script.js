@@ -837,4 +837,3 @@ $(document).ready(function() {
         alert('Missing search parameters');
     }
 });
-
