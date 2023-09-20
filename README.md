@@ -20,10 +20,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+
 
 
 
@@ -64,10 +61,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#prerequisites">Prerequisites</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#project-requirements">Project Requirements</a></li>
+        <li><a href="#presentation-requirements">Presentation Requirements</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -108,14 +105,12 @@ Tailwind CSS was used as our CSS framework to style the page.
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Prerequisites
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-#### Project Requirements
+### Project Requirements
 
 You and your group will use everything you’ve learned over the past six weeks to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
@@ -141,7 +136,7 @@ Have a quality README (with unique name, description, technologies used, screens
 
 Finally, You must add your project to the portfolio that you created in Module 2.
 
-#### Presentation Requirements
+### Presentation Requirements
 
 Use this Project Presentation TemplateLinks to an external site. to address the following:
 
@@ -184,9 +179,11 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+* When the page is loaded select your vehicle year, make, and model
+* Then select the DIY sevice or maintenance desired
+* Then click find info 
+* The user will be directed to a page that has Videos to walk you through the service that was selected accoriding to the year, make, and model of the vehicle that was selected.
+* The user will also be directed to be able to order the parts needed to perform this service
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -230,7 +227,27 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+MIT License
+
+Copyright (c) 2023 Angelo Jeon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -239,9 +256,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+Project Link: [https://github.com/your_username/repo_name] [https://github.com/whatnameshouldiuse/Super-4-Project]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
