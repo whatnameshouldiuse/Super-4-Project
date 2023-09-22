@@ -838,3 +838,6 @@ $(document).ready(function() {
     }
 });
 
+
+
+document.getElementById('display-2').value
