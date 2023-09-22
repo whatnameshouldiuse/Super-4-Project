@@ -83,9 +83,6 @@ Tailwind CSS was used as our CSS framework to style the page.
 <!-- GETTING STARTED -->
 ## Prerequisites
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Project Requirements
 
 You and your group will use everything you’ve learned over the past six weeks to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
@@ -131,11 +128,11 @@ Links to the deployed application and the GitHub repository.
 
 ## Usage
 
-* When the page is loaded select your vehicle year, make, and model
-* Then select the DIY sevice or maintenance desired
+* When the page is loaded, select your vehicle year, make, and model
+* Then select the DIY service or maintenance desired
 * Then click find info 
-* The user will be directed to a page that has Videos to walk you through the service that was selected accoriding to the year, make, and model of the vehicle that was selected.
-* The user will also be directed to be able to order the parts needed to perform this service
+* The user will be directed to a page that has Videos to walk you through the service that was selected according to the year, make, and model of the vehicle that was selected.
+* The user will also have the ability to be able to order the parts needed to perform this service
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,7 +186,7 @@ SOFTWARE.
 <!-- CONTACT -->
 ## Contact
 
-
+Deployed Link: []
 
 Project Link:[https://github.com/whatnameshouldiuse/Super-4-Project]
 
@@ -225,20 +222,6 @@ Project Link:[https://github.com/whatnameshouldiuse/Super-4-Project]
 
 
 
-<!-- [Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com  -->
+
 
 
