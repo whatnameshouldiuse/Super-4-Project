@@ -105,7 +105,7 @@ async function test(){
             // var results = data.results.slice(0, 3);
             for (var i = 0; i < 3; i++) {
                 data.contents[i]
-console.log(data.contents[i])
+// console.log(data.contents[i])
 // document.getElementById(`y${i}`).value
 
 
