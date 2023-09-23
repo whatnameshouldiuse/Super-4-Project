@@ -837,3 +837,7 @@ $(document).ready(function() {
         alert('Missing search parameters');
     }
 });
+
+
+
+document.getElementById('display-2').value
