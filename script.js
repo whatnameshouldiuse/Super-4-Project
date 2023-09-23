@@ -800,9 +800,9 @@ $('#submit-button').click(function() {
 
 // Search YouTube
 function searchYouTube(year, make, model, project) {
-    const apiKey = 'AIzaSyBniUrdA_ATDmJ6H5XjB3ByFZKSnmMqp38'; //Youtube Key goes here
+    const apiKey = 'AIzaSyDOcavaDDwrIqLu1yyHn3f9jUgceP9ch0k'; //Youtube Key goes here
     const query = `${year} ${make} ${model} ${project} DIY`;
-    const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?`; //Need Youtube site here
+    const url = `https://youtube.googleapis.com/`; //Need Youtube site here
 
     $.get(url, function(data) {
        
@@ -838,3 +838,6 @@ $(document).ready(function() {
     }
 });
 
+
+
+document.getElementById('display-2').value
