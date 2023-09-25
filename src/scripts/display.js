@@ -26,7 +26,8 @@ async function getEbay() {
       "X-RapidAPI-Host": "ebay-search-result.p.rapidapi.com",
     },
   };
-
+  
+  var ebaySection = $('#ebay-section');
   try {
     fetch(url, options)
       .then(function (response) {
@@ -34,7 +35,6 @@ async function getEbay() {
       })
       .then(function (data) {
         var results = data.results;
-        var ebaySection = $('#ebay-section');
         var ListingsGrid = $('<div class="w-11/12 grid grid-cols-2 gap-6"></div>');
 
         for (var i = 1; i <= 8; i++) {
@@ -73,6 +73,7 @@ async function getEbay() {
       });
   } catch (error) {
     console.error(error);
+    ebaySection.children('svg').addClass('hidden');
   }
 }
 
@@ -94,14 +95,13 @@ async function getYoutube(){
       }
   };
 
+  var youtubeSection = $('#youtube-section');
   try {
       fetch(url, options)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data);
-          var youtubeSection = $('#youtube-section');
           for (var i = 0; i < 3; i++) {
             var embedUrl = 'https://www.youtube-nocookie.com/embed/' + data.contents[i]['video']['videoId'];
             
@@ -122,6 +122,7 @@ async function getYoutube(){
         });
   } catch (error) {
     console.error(error);
+    youtubeSection.children('svg').addClass('hidden');
   }
 }
 
