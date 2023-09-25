@@ -1,28 +1,9 @@
-// When the button is clicked, navigate to another HTML page or do other actions
-document.getElementById('submit-button').addEventListener('click', function() {
-    const selectedYear = yearDropdown.value;
-    const selectedMake = document.getElementById('make').value;
-    const selectedModel = document.getElementById('model').value;
-    
-    if (selectedYear && selectedMake && selectedModel) {
-        // Implement logic to navigate to another HTML page, or populate Youtube and eBay sections
-        alert(`You've selected a ${selectedYear} ${selectedMake} ${selectedModel}`);
-    } else {
-        alert('Please select all fields');
-    }
-});
+const yearDropdown = $('#year');
+const makeDropdown = $('#make');
+const modelDropdown = $('#model');
 
-
-
-// Populate the "Year" dropdown dynamically
-const yearDropdown = document.getElementById('year');
-const currentYear = new Date().getFullYear();
-for (let year = 1985; year <= currentYear; year++) {
-    const option = document.createElement('option');
-    option.value = year;
-    option.innerText = year;
-    yearDropdown.appendChild(option);
-}
+// Form reset
+ResetForm();
 
 // Start adding data here.....
 const carData = {
@@ -740,63 +721,77 @@ const carData = {
         'Toyota': ['4Runner', 'Camry', 'Crown', 'GR86', 'Corolla', 'Supra', 'Highlander', 'Mirai', 'Pruis', 'Rav4', 'Sequoia', 'Sequoia', 'Sienna', 'Tacoma', 'Tundra', 'Venza', 'bZ4X' ],
     },
     
-};
+}
 
 // When the year is chosen, then "Make" dropdown shows the listed makes
-yearDropdown.addEventListener('change', function() {
+yearDropdown.on('change', function() {
     const selectedYear = this.value;
-    const makeDropdown = document.getElementById('make');
-    makeDropdown.innerHTML = '<option value="" disabled selected>Select Make</option>';
+
+    makeDropdown.attr('disabled', false);
+    makeDropdown.html('<option value="" disabled selected>Select Make</option>');
+    SelectorEnabledStyle(makeDropdown);
+
     for (const make in carData[selectedYear]) {
         const option = document.createElement('option');
         option.value = make;
         option.innerText = make;
-        makeDropdown.appendChild(option);
+        makeDropdown.append(option);
     }
+    
+    if (modelDropdown.disabled != true) {
+        modelDropdown.attr('disabled', true);
+        modelDropdown.html('');
+        SelectorDisabledStyle(modelDropdown);
+    }
+
+    ToggleDIYSelector(false);
 });
 
 // When the make changes, update the "Model" dropdown
-document.getElementById('make').addEventListener('change', function() {
-    const selectedYear = yearDropdown.value;
+makeDropdown.on('change', function() {
+    const selectedYear = yearDropdown.val();
     const selectedMake = this.value;
-    const modelDropdown = document.getElementById('model');
-    modelDropdown.innerHTML = '<option value="" disabled selected>Select Model</option>';
+
+    modelDropdown.attr('disabled', false);
+    modelDropdown.html('<option value="" disabled selected>Select Model</option>');
+    SelectorEnabledStyle(modelDropdown);
+    
     for (const model of carData[selectedYear][selectedMake]) {
         const option = document.createElement('option');
         option.value = model;
         option.innerText = model;
-        modelDropdown.appendChild(option);
+        modelDropdown.append(option);
     }
+    
+    ToggleDIYSelector(false);
 });
 
-    // Populate the "Select project" dropdown
-const dyiDropdown = document.getElementById('DYI');
-const projectOptions = ['Oil change', 'Fuel Filter', 'Air Filter', 'Windshield Wipers', 'Tire Rotation'];
-for (const project of projectOptions) {
-    const option = document.createElement('option');
-    option.value = project;
-    option.innerText = project;
-    dyiDropdown.appendChild(option);
-}
-
-
-//Trying this from another project
-
-
-//Listener for the submit button
-$('#submit-button').click(function() {
-    const selectedYear = $('#year').val();
-    const selectedMake = $('#make').val();
-    const selectedModel = $('#model').val();
-    const selectedProject = $('#DYI').val();  // Changed from DIY to DYI
-
-    if (selectedYear && selectedMake && selectedModel && selectedProject) {
-        // Redirect to the results page
-        window.location.href = `results.html?year=${selectedYear}&make=${selectedMake}&model=${selectedModel}&project=${selectedProject}`;
-    } else {
-        alert('Please select all fields');
-    }
+// When the model changes, bring out the DIY Project Selection
+modelDropdown.on('change', function() {
+    ToggleDIYSelector(true);
 });
+
+//Listener for the reset button
+// $('#submit-button').click(function() {
+//     const selectedYear = $('#year').val();
+//     const selectedMake = $('#make').val();
+//     const selectedModel = $('#model').val();
+//     const selectedProject = $('#DYI').val();  // Changed from DIY to DYI
+
+//     if (selectedYear && selectedMake && selectedModel && selectedProject) {
+//         // Redirect to the results page
+//         window.location.href = `results.html?year=${selectedYear}&make=${selectedMake}&model=${selectedModel}&project=${selectedProject}`;
+//     } else {
+//         alert('Please select all fields');
+//     }
+// });
+
+
+
+// Listener for the Reset button
+$('#reset-form').click(function() {
+    ResetForm();
+})
 
 // Search YouTube
 function searchYouTube(year, make, model, project) {
@@ -809,35 +804,108 @@ function searchYouTube(year, make, model, project) {
     });
 }
 
-// Function to search eBay
-function searchEbay(year, make, model, project) {
-    const appId = ''; //eBay Key goes here
-    const query = `${year} ${make} ${model} ${project}`;
-    const url = ``; //Need eBay's site here
+// $(document).ready(function() {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const year = urlParams.get('year');
+//     const make = urlParams.get('make');
+//     const model = urlParams.get('model');
+//     const project = urlParams.get('project');
 
-    $.get(url, function(data) {
+//     if (year && make && model && project) {
+//         // Search YouTube
+//         searchYouTube(year, make, model, project);
 
-    });
+//         // Search eBay
+//         searchEbay(year, make, model, project);
+//     } else {
+//         alert('Missing search parameters');
+//     }
+// });
+
+function SelectorEnabledStyle(selector) {
+    selector.parent()
+        .removeClass("bg-gray-100/60 ")
+        .addClass("bg-sky-500/75");
+
+    selector.siblings('.selectors')
+        .removeClass("text-gray-600/90")
+        .addClass("text-white");
+
+    selector
+        .removeClass("bg-gray-100/80 border-gray-800/40")
+        .addClass("cursor-pointer bg-white/90 border-transparent hover:border-indigo-200");
 }
 
-$(document).ready(function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const year = urlParams.get('year');
-    const make = urlParams.get('make');
-    const model = urlParams.get('model');
-    const project = urlParams.get('project');
+function SelectorDisabledStyle(selector) {
+    selector.parent()
+        .removeClass("bg-sky-500/75")
+        .addClass("bg-gray-100/60");
+    
+    selector.siblings('.selectors')
+        .removeClass("text-white")
+        .addClass("text-gray-600/90");
 
-    if (year && make && model && project) {
-        // Search YouTube
-        searchYouTube(year, make, model, project);
+    selector
+        .removeClass("cursor-pointer bg-white/90 border-transparent hover:border-indigo-200")
+        .addClass("bg-gray-100/80 border-gray-800/40");
+}
 
-        // Search eBay
-        searchEbay(year, make, model, project);
+function ToggleDIYSelector(enable) {
+    const projectButtons = $('#project-selection').children();
+    const enabledStyle = 'bg-sky-600/80 hover:bg-sky-700/75 hover:border-indigo-200 text-white';
+    const disabledStyle = 'text-black bg-gray-100/60 cursor-default';
+
+    if (enable) {
+        projectButtons
+            .removeClass(disabledStyle)
+            .addClass(enabledStyle);
+        projectButtons.each(function() {
+            $(this).on('click', function() {
+                SubmitForm($(this).text());
+            });
+        });
     } else {
-        alert('Missing search parameters');
+        projectButtons
+            .removeClass(enabledStyle)
+            .addClass(disabledStyle)
+            .off('click');
     }
-});
+}
 
+function ResetForm() {
+    yearDropdown.html('<option value="" disabled selected>Select Year</option>');
 
+    makeDropdown.attr('disabled', true);
+    makeDropdown.html('');
+    SelectorDisabledStyle(makeDropdown);
 
-document.getElementById('display-2').value
+    modelDropdown.attr('disabled', true);
+    modelDropdown.html('');
+    SelectorDisabledStyle(modelDropdown);
+
+    ToggleDIYSelector(false);
+
+    // Populate Year Dropdown
+    const currentYear = new Date().getFullYear();
+    for (let year = 1985; year <= currentYear; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.innerText = year;
+        yearDropdown.append(option);
+    }
+}
+
+function SubmitForm(project) {
+    var yearVal = yearDropdown.val();
+    var makeVal = makeDropdown.val();
+    var modelVal = modelDropdown.val();
+
+    console.log(yearVal + ' ' + makeVal + ' ' + modelVal + ' ' + project);
+
+    if (yearVal && makeVal && modelVal && project) {
+        // Redirect to the results page
+        window.location.href = `results.html?year=${yearVal}&make=${makeVal}&model=${modelVal}&project=${project}`;
+    } else {
+        alert('Please select all fields');
+    }
+}

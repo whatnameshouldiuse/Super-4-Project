@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Automotive DIY</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a624b9117e.js" crossorigin="anonymous"></script>
+</head>
+
+<body 
+    class="font-mono 
+    flex flex-col content-evenly gap-8 
+    bg-fixed
+    "
+>
+    <!-- Gradient Tinting -->
+    <!-- <div
+        class="object-fill absolute z-[-1] bg-fixed
+        bg-gradient-to-r from-cyan-300/50 to-indigo-700/60
+        min-w-full min-h-full"
+    ></div> -->
+
+    <header 
+        class="flex flex-col items-center
+        text-indigo-800 font-bold
+        py-8 "
+    >
+        <h1 class="grow text-[100px]">SuperBAD</h1>
+        <h2 class="grow text-3xl">Super Basic Automotive DIY</h2>
+    </header>
+
+    <main class="w-screen h-1/5 bg-sky-200/40 py-7 flex justify-center">
+        <div class="w-4/5">
+            <section 
+                id="selector-section" 
+                class="grid grid-cols-3 gap-8
+                justify-around
+                justify-items-center"
+            >
+                <div 
+                    class="grow w-full justify-items-center rounded-lg
+                    bg-sky-500/75
+                    transition ease-in"
+                >
+                    <label class="selectors text-white" for="year">Year</label>
+                    <select id="year" 
+                        class="w-5/6 rounded-full border-2
+                        cursor-pointer
+                        bg-white/90 border-transparent
+                        transition ease-in
+                        hover:border-indigo-200"
+                    >
+                        <!-- <option value="" disabled selected>Select Year</option> -->
+                    </select>
+                </div>
+
+                <div 
+                    class="grow w-full justify-items-center rounded-lg
+                    bg-gray-100/60
+                    transition ease-in"
+                >
+                    <label class="selectors text-gray-600/90" for="make">Make</label>
+                    <select id="make" disabled="true" 
+                        class="w-5/6 rounded-full border-2
+                        bg-gray-100/80 border border-gray-800/40
+                        transition ease-in"
+                    >
+                        <!-- <option value="" disabled selected>Select Make</option> -->
+                    </select>
+                </div>
+
+                <div 
+                    class="grow w-full justify-items-center rounded-lg
+                    bg-gray-100/60
+                    transition ease-in"
+                >
+                    <label class="selectors text-gray-600/90" for="model">Model</label>
+                    <select id="model" disabled="true" 
+                        class="w-5/6 rounded-full border-2
+                        bg-gray-100/80 border border-gray-800/40
+                        transition ease-in"
+                    >
+                        <!-- <option value="" disabled selected>Select Model</option> -->
+                    </select>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+
+    <main class="w-screen h-1/5 bg-sky-200/40 py-7 flex justify-center">
+        <div id="project-selection" 
+            class="w-7/10 grid grid-cols-5 gap-10"
+        >
+            <button id="submit-oil"
+            class="w-full text-white text-xl font-bold rounded-full
+            bg-sky-600/80 border-4 border-transparent
+            transition ease-in
+            hover:bg-sky-700/75 hover:border-indigo-200"
+            >
+Oil Change
+            </button>
+            <button id="submit-fuel"
+            class="w-full text-white text-xl font-bold rounded-full
+            bg-sky-600/80 border-4 border-transparent
+            transition ease-in
+            hover:bg-sky-700/75 hover:border-indigo-200"
+            >
+Fuel Filter
+            </button>
+            <button id="submit-air"
+            class="w-full text-white text-xl font-bold rounded-full
+            bg-sky-600/80 border-4 border-transparent
+            transition ease-in
+            hover:bg-sky-700/75 hover:border-indigo-200"
+            >
+Air Filter
+            </button>
+            <button id="submit-wiper"
+            class="w-full text-white text-xl font-bold rounded-full
+            bg-sky-600/80 border-4 border-transparent
+            transition ease-in
+            hover:bg-sky-700/75 hover:border-indigo-200"
+            >
+Windshield Wipers
+            </button>
+            <button id="submit-tire"
+            class="w-full text-white text-xl font-bold rounded-full
+            bg-sky-600/80 border-4 border-transparent
+            transition ease-in
+            hover:bg-sky-700/75 hover:border-indigo-200"
+            >
+Tire Rotation
+            </button>
+        </div>
+    </main>
+
+    <button id="reset-form"
+        class="rounded-full bg-red-600 text-white border-2 border-transparent
+        transition ease-in items-center
+        hover:bg-red-800 hover:border-white
+        active:bg-red-100 active:border-red-800 active:text-red-900"
+    >
+        <i class="fa-solid fa-recycle fa-sm" style="color: #ffffff;"></i>
+        Reset
+    </button>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

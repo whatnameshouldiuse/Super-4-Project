@@ -1,0 +1,36 @@
+
+body {
+    background-image: url('../images/Shiny\ Car\ Surface.jpg')
+}
+
+main {
+    margin: 20px auto;
+    padding: 20px;
+    /* background-color: rgb(183, 174, 174); */
+}
+
+label {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: 15px 0;
+}
+
+select, button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+select {
+    padding-left: 20px;
+}
+
+option {
+    padding-left: 5px;
+}
+
+.selectors {
+    font-size: 16pt;
+}
