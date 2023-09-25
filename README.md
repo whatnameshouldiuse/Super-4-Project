@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Description
 
-[![SuperBad screenshot][product-screenshot]](https://example.com)
+![SuperBad screenshot](./src/images/MainPage.png)
 
 This program is for the average person with no prior mechanical experience to do basic DIY repairs and services on their automobile.
 The user picks the year, make, and model of their vehicle.
@@ -186,7 +186,7 @@ SOFTWARE.
 <!-- CONTACT -->
 ## Contact
 
-Deployed Link: []
+Deployed Link:[https://whatnameshouldiuse.github.io/Super-4-Project/src/index.html]
 
 Project Link:[https://github.com/whatnameshouldiuse/Super-4-Project]
 
@@ -201,7 +201,9 @@ Project Link:[https://github.com/whatnameshouldiuse/Super-4-Project]
 * [Youtube API](https://rapidapi.com/ytdlfree/api/youtube-v31)
 * [GitHub Pages](https://pages.github.com)
 * [Vehicle Years,Makes,Models](https://www.velocityjournal.com/journal/)
-
+* [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+* [Font Awesome](https://fontawesome.com/)
+* [Getty Images](https://www.gettyimages.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
